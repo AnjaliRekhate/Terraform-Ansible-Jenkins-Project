@@ -37,7 +37,7 @@ pipeline {
          script {
              sshagent(credentials : ['aws_ec2']){
 
-                sh 'ssh -o StrictHostKeyChecking=no -i assignment-c7key.pem ubuntu@10.0.1.147'
+                sh 'ssh -o StrictHostKeyChecking=no -i demo.pem ubuntu@10.0.1.147'
 
              }
                 //sh 'ssh -i /login/demo.pem ubuntu@10.0.1.147'
