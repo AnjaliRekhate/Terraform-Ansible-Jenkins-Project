@@ -15,7 +15,7 @@ pipeline {
         }
 	stage('Build') {
             steps {
-                docker.build("upgrad-assignment")
+                docker build -t upgrad-assignment 
             }
         }
     }
