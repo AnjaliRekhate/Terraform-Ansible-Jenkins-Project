@@ -20,5 +20,4 @@ resource "aws_security_group" "bastion_SG" {
 
   }
 
-
-}
+    }
