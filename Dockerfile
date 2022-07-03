@@ -1,11 +1,6 @@
-FROM node:alpine
+FROM node:12-alpine
 
-WORKDIR /app
-
-COPY package*.json ./
-
-RUN npm install
-
-COPY . .
-
-CMD [ "node", "server.js" ]
+ WORKDIR /app
+ COPY ./test-nodeapp-1-task .
+ RUN yarn install --production
+ CMD ["node", "server.js"]
