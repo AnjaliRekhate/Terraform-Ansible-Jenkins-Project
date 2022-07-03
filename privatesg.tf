@@ -20,4 +20,4 @@ resource "aws_security_group" "private_SG" {
   }
 
 
-}
+    }
