@@ -30,4 +30,5 @@ resource "aws_security_group" "web_SG" {
   tags = {
     Name = "web_SG"
   }
-}
+
+    }
