@@ -15,7 +15,7 @@ pipeline {
         }
 	stage('Build') {
             steps {
-                docker.build("terraform_anisble")
+                docker.build("upgrad-assignment")
             }
         }
     }
