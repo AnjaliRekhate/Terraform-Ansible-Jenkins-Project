@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Cloning Git') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '', url: 'https://github.com/AnjaliRekhate/Terraform-Ansible-Jenkins-Project.git']]])
+               git branch: 'main', url: 'https://github.com/AnjaliRekhate/upGrad-Course_Project.git'
             }
         }
 
@@ -24,8 +24,8 @@ pipeline {
     stage('Pushing to ECR') {
         steps{
             script {
-                sh 'docker login -u AWS -p $(aws ecr get-login-password --region us-east-1) 136954245697.dkr.ecr.us-east-1.amazonaws.com/upgrad-assignment'
-                sh 'docker push 136954245697.dkr.ecr.us-east-1.amazonaws.com/upgrad-assignment'
+                sh 'sudo docker login -u AWS -p $(aws ecr get-login-password --region us-east-1) 136954245697.dkr.ecr.us-east-1.amazonaws.com/upgrad-assignment'
+                sh 'sudo docker push 136954245697.dkr.ecr.us-east-1.amazonaws.com/upgrad-assignment'
             }
         }
     }
@@ -39,7 +39,7 @@ pipeline {
 
              }
                 //sh 'ssh -i /login/demo.pem ubuntu@10.0.1.147'
-                sh 'docker run -d -p 8081:8080 --rm --name node 136954245697.dkr.ecr.us-east-1.amazonaws.com/upgrad-assignment'
+                sh 'sudo docker run -d -p 8081:8080 --rm --name node 136954245697.dkr.ecr.us-east-1.amazonaws.com/upgrad-assignment'
             }
       }
     }
